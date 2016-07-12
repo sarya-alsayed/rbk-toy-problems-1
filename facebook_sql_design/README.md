@@ -6,7 +6,7 @@
 
 Facebook User has many Likes and many Post
 Post has many Likes, many Comments and one User
-Comment has a User
-Likes has one User and one Post
+Comment has one User
+Like has one User and one Post
 
 * [ ] Optional question for your brain: User to User has Friendship.
