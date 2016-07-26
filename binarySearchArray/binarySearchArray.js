@@ -35,7 +35,7 @@ var binarySearch = function (array, target) {
       }
 
       if (A[midPoint] === x ) {
-          return ("element found",x,midPoint);
+          return midPoint;
       }
 
 
