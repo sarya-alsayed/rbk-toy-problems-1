@@ -30,6 +30,37 @@ var solvedBoard = [[0,1,1],
 ticTacToe(solvedBoard);//should return 1
 */
 
+// this function check if the elements of array have the same value
+var checkRow = function (array){
+	 for (var i=1; i<array.length; i++){
+	 	if (array[i]!==array[0]){
+	 		return false;
+	 	}
+
+	 }
+	 return  true;
+}
+
 function ticTacToe(board){
+	// this method check row row in the board 
+	// for column i need another function for check column and major dianlog
+	for (var i=0; i<board.length;i++){
+		for (var j=0;j<board.length;j++){
+			if(board[i][j]===1){
+				if(checkRow(board[i])){
+					return 1;
+
+				}
+				else if (board[i][j]===2) {
+					if(checkRow(board[i])){
+						return 2;
+					}
+
+				}
+
+			}
+		}
+	}
+	 
 
 };
