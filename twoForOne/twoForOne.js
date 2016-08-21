@@ -14,6 +14,15 @@ abc(); // should return 'a' again on this fourth call
 */
 
 function makeLooper(string){
+	var str;
+   /// need refactor code for substring and get correct string
+	return function (){
+	  	  str=string[0];
+          string=string.substring(1,string.length-1);
+          console.log(string);
+	  	return str;
+
+	}
 
 };
 
@@ -41,6 +50,15 @@ pyramid(1666); // should === 16
 */
 
 function pyramid(cans){
+	var i=1;
+	var sum=0;
+	while (sum <=cans){
+		sum=sum+Math.pow(i,2);
+		 i++;
+	}
+	//console.log(sum);
+	return i-2;
+
 
 };
 
