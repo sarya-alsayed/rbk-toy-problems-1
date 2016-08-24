@@ -15,6 +15,11 @@ singleNumber(arr);//should return 6 because it only appear once
 */
 
 function singleNumber(arr){
+	for (var i=0;i<arr.length;i++){
+		if (arr.indexOf(arr[i])===arr.lastIndexOf(arr[i])){
+			return arr[i];
+		}
+	}
 
 }
 
@@ -48,7 +53,20 @@ countAllNumbers(2); //should return 91 because there are 91 numbers that have un
 */
 
 function countAllNumbers(n){
+	var counter=10;
+	var array=[0,1,2,3,4,5,6,7,8,9];
+	length=Math.pow(10,n);
+	for (var x=10;x<length;x++){
+		if (x%11!==0){
+			array.push(x);
+			counter++
+		}
+	}
+	console.log(array);
+
+	return counter;
 
 };
 
 
+	
