@@ -36,6 +36,31 @@ rotate(data, 12478) // => [3, 4, 5, 1, 2]
 */
 
 function rotate(array, steps){
+	var newArray=array.slice();
+	var i=1;
+	var j=-1;
+	var element;
+	if (steps===0){
+		return array;
+	}
+	else if (steps>0){
+		while(i<=steps){
+			element=newArray.pop();
+			newArray.unshift(element);
+			i++;
+		}
+	}
+	else if (steps<0){
+		while(j>=steps){
+			element=newArray.shift();
+			newArray.push(element);
+			j--;
+		}
+
+	}
+
+
+	return newArray;
 
 }
 
@@ -58,6 +83,9 @@ nextBigger(531)==-1
 */
 
 function nextBigger(num){
+	var str=num+"";
+	str=str.split("");
+
   
 };
 
