@@ -12,5 +12,39 @@
 */
 
 var longestPalindrome = function (string) {
+  var maxLength = 1;  
+  var  start = 0;
+  var low;
+  var high;
+    for (var i=1; i<string.length;i++)
+    {
+        low = i - 1;
+        high = i;
+        while (low >= 0 && high <string.length && string[low] === string[high])
+        {
+            if (high - low + 1 > maxLength)
+            {
+                start = low;
+                maxLength = high - low + 1;
+            }
+            low--;
+            high++;
+        }
+        low = i - 1;
+        high = i + 1;
+        while (low >= 0 && high <string.length && string[low] === string[high])
+        {
+            if (high - low + 1 > maxLength)
+            {
+                start = low;
+                maxLength = high - low + 1;
+            }
+            low--;
+            high++;
+        }
+    }
+   var str= string.substring(start,start + maxLength - 1)
+   console.log(str);
+return maxLength;
   
 };
