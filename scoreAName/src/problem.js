@@ -45,7 +45,7 @@ var totalNameScores = function(){
 			sum = sum + (alphabet.indexOf(words[i][j]));
 		}
           nameScores=nameScores+(sum*(i+1));
-		  sum=0;
+		  sum=0
 	}
     
   return nameScores;
