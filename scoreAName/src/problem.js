@@ -15,12 +15,40 @@ To run the tests run npm install and npm test.
 fs = require('fs');
 
 var readFile = function (){
-  var contents = fs.readfileSync("./names.txt").toString();
+  var contents = fs.readFileSync("./names.txt").toString();
   return contents.split(",");
 }
 
+///
+var bubbleSort = function(array) {
+	for (var i=0;i<array.length;i++){
+		for (var j=0;j<array.length;j++){
+		   if (array[j]>array[j+1]){
+		   	var temp=array[j];
+		   	array[j]=array[j+1];
+		   	array[j+1]=temp;
+		   }
+		}
+	}
+   return array;
+};
+/////
+
 var totalNameScores = function(){
-  return 0;
+	var alphabet=[0,"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+	var sum=0;
+	var nameScores=0;
+	var contents=readFile();
+	var words=bubbleSort(contents);
+	for (var i=0;i<words.length;i++){
+		for (var j=0;j<words[i].length;j++){
+			sum = sum + (alphabet.indexOf(words[i][j]));
+		}
+          nameScores=nameScores+(sum*(i+1));
+		  sum=0;
+	}
+    
+  return nameScores;
 }
 
 module.exports = {totalNameScores};
