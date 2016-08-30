@@ -1,34 +1,34 @@
 /*
-
 From given file, return all unique words with their counts.
-Do not include commas, spaces, quotes..etc
+Do not include commas, spaces, double quotes..etc but you can keep 
+the apostrophes to avoid complexities.
 
-Example:
-
-input: "scars – is an incredibly humbling experience,\” Ambrose said."
+Example>>
+input: "I've scars – is an incredibly humbling experience,\” Ambrose said."
 
 output: 
 {
-	"scars":      1,
-	"is":         1,
-	"an":         1,
-	"incredibly": 1,
-	"humbling":   1,
-	"experience": 1,
-	"ambrose":    1,
-	"said":       1
+	"I've"       :1,
+	"scars"      :1,
+	"is"         :1,
+	"an"         :1,
+	"incredibly" :1,
+	"humbling"   :1,
+	"experience" :1,
+	"Ambrose"    :1,
+	"said"       :1
 }
 
-Run with
+Run the file using Node
+$ node wordCounter.js
 
-$ node wordCounter.js to excute the file.
-
+You can check your output with http://www.writewords.org.uk/word_count.asp
 */
 
 fs = require('fs');
 
 var readFile = function (){
   var contents = fs.readFileSync("./news.txt").toString();
-  return contents
-}
+  return contents;
+};
 
