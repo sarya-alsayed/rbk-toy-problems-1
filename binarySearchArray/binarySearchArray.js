@@ -44,5 +44,24 @@ var binarySearch = function (array, target) {
   
 };
 
+/////
+function binarySearch2(array,target){
+  var low =0;
+  var high=array.length-1;
+  var mid=0;
+  while (high>=low){
+    mid=Math.floor((low+high)/2);
+    if (array[mid]===target){
+      return mid;
+    }
+    else if(target<array[mid]){
+       high=mid-1;
+    }
+    else if (target>array[mid]){
+      low=mid+1
+    }
 
+  }
+  return false;
+}
 

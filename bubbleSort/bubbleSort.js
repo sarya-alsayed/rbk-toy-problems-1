@@ -104,3 +104,13 @@ console.log(a);
 
 // Remember to look here http://visualgo.net/sorting
 >>>>>>> 887eeab433fb4932a3de88094dc9e48d73647ee5
+function remove(array){
+  for (var i=0;i<array.length;i++){
+    for (var j=i+1;j<array.length;j++){
+      if (array[i]===array[j]){
+        array.splice(j,1)
+      }
+    }
+  }
+return array;
+}

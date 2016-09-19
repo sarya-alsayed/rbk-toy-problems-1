@@ -31,4 +31,23 @@ var readFile = function (){
   var contents = fs.readFileSync("./news.txt").toString();
   return contents;
 };
+function wordCounter(){
+	var contents=readFile();
+	var words=contents.split(" ");
+	var output={}
+	for (var i=0;i<words.length;i++){ 
+		for (var key in output){
+			if (words[i]!==key){
+				output[words[i]]=1
+			}
+			else if(words[i]===key) {
+               output[words[i]]=output[words[i]]+1;
+			}
+		}
+
+	}
+	return output;
+    
+}
+console.log(wordCounter());
 
