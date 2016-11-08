@@ -34,20 +34,23 @@ var readFile = function (){
 function wordCounter(){
 	var contents=readFile();
 	var words=contents.split(" ");
-	var output={}
+	var output={};
+	var b=true;
 	for (var i=0;i<words.length;i++){ 
+		b=true;
 		for (var key in output){
-			if (words[i]!==key){
-				output[words[i]]=1
-			}
-			else if(words[i]===key) {
-               output[words[i]]=output[words[i]]+1;
+			 if(words[i]===key) {
+                output[words[i]]=output[words[i]]+1;
+			 	b=false;
 			}
 		}
-
+				if (b){
+					output[words[i]]=1;
+			 	}              
 	}
 	return output;
     
 }
-console.log(wordCounter());
+var out=wordCounter();
+console.log(out);
 
